@@ -1,0 +1,28 @@
+# Nimbus Streaming pricing decision — Python dependencies
+# Python 3.10+ required (the notebook uses `from __future__ import annotations`
+# with PEP 604 style hints, and tuple[...] / dict[...] builtins).
+#
+# Install:  python -m pip install -r requirements.txt
+
+# --- analysis stack (imported directly by nimbus_decision_starter.ipynb) ---
+numpy>=1.26,<3
+pandas>=2.1,<4
+scipy>=1.11,<2          # stats.norm, optimize.brentq
+statsmodels>=0.14,<1    # Logit for the propensity, outcome, and AIPW models
+matplotlib>=3.8,<4
+seaborn>=0.13,<1
+
+# --- to open and run the notebook ---
+jupyterlab>=4.0,<5
+ipykernel>=6.29,<8
+
+# ---------------------------------------------------------------------------
+# Exact versions this submission was executed and validated against:
+#   python 3.12.3
+#   numpy 2.4.4      pandas 3.0.2     scipy 1.17.1
+#   statsmodels 0.15.0                matplotlib 3.10.8   seaborn 0.13.2
+#   ipykernel 7.3.0
+# To reproduce that environment bit-for-bit, replace the ranges above with
+# these `==` pins. The ranges are the default because results are stable
+# across them: all randomness is seeded via np.random.default_rng(7).
+# ---------------------------------------------------------------------------
